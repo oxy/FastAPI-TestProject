@@ -2,6 +2,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/test")
-async def root():
-    return {"message": "Hello World"}
+@app.get('/{file_path:path}')
+async def root(file_path: str):
+    return {"message": file_path}
